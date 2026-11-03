@@ -21,7 +21,7 @@
             </div>
 
             <div class="daftar-btn bg-purple-500 hover:bg-purple-200 hover:-translate-y-1 px-4 py-1 rounded-sm transition duration-300 ease-in-out">
-                <a href="" class="text-purple-900">Daftar</a>
+                <a href="/register" class="text-purple-900">Daftar</a>
             </div>
         </div>
     </div>
