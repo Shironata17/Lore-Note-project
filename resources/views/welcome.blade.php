@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="nav">
-        <div class="p-3 bg-purple-900 justify-between flex items-center text-purple-200">
+        <div class="p-3 bg-linear-to-r from-purple-800 to-pink-600 justify-between flex items-center text-purple-200">
             <div class="text-4xl font-bold">
                 <h1>Lore/Note</h1>
             </div>
@@ -59,7 +59,7 @@
         </div>
     </div>
 
-    <div class="about-us bg-purple-900 px-3">
+    <div class="about-us bg-linear-to-r from-purple-800 to-pink-600 px-3">
         <div class="flex justify-center p-5">
             <h1 class="font-bold text-5xl text-purple-200" id="about">About Us</h1>
         </div>

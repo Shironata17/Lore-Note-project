@@ -46,23 +46,59 @@
         </div>
     </div>
 
-    <div class="recent-book px-2">
-        <div class="title-rc p-2 bg-purple-500 w-1/5 rounded-t-lg border-2 border-purple-500 border-b-purple-300">
-            <h1 class="font-bold">Recent Update</h1>
-        </div>
+    <div class="menu">
+        <div class="menu-cont">
+            <div class="title-menu font-bold p-3 text-xl text-purple-950">
+                <h1>Dokumen saya</h1>
+            </div>
 
-        <div class="card-rc w-1/2 bg-purple-500 p-2 text-white">
-            @forelse($book as $b)
-                <div class="flex justify-between">
-                    <h1 class="font-bold">{{ $b->judul }}</h1>
-                    <h1>{{ $b->created_at }}</h1>
+            <div class="title flex gap-4">
+                <div class="men-btn font-bold px-3 py-4">
+                    <a href="#" class="border border-transparent [&.active]:border-purple-800 [&.active]:text-purple-800 px-2 py-1 rounded-sm" onclick="ubahAktif(this)">
+                        Terbaru
+                    </a>
                 </div>
-            @empty
-                <div>
-                    <h1>There is no book yet</h1>
+
+                <!-- CONTOH 2: Kondisi ketika menu biasa / tidak aktif (tanpa class "active") -->
+                <div class="men-btn font-bold px-3 py-4">
+                    <a href="#" class="border border-transparent [&.active]:border-purple-800 [&.active]:text-purple-800 px-2 py-1 rounded-sm ac " onclick="ubahAktif(this)">
+                        Favorit
+                    </a>
                 </div>
-            @endforelse
+            </div>
+
+            <hr class="w-40 ml-4 mb-3 opacity-50">
+
+            <table class="border-separate border-spacing-x-4">
+                <thead>
+                    <tr class="text-left font-medium text-opacity-50">
+                        <td class="w-3/4">Nama</td>
+                        <td class="w-1/4">Waktu</td>
+                    </tr>
+
+                </thead>
+                
+                <tbody>
+                    @forelse($book as $b)
+                    <tr>
+                        <td>{{ $b->judul }}</td>
+                        <td>{{ $b->created_at->format('d M Y') }}</td>
+                    </tr>
+                    @empty
+                    @endforelse
+                </tbody>
+            </table>
         </div>
     </div>
+
+    <script>
+        function ubahAktif(elemen) {
+            // 1. Hapus class 'active' dari semua menu
+            document.querySelectorAll('.men-btn a').forEach(a => a.classList.remove('active'));
+
+            // 2. Tambahkan class 'active' ke menu yang baru diklik
+            elemen.classList.add('active');
+        }
+</script>
 </body>
 </html>
